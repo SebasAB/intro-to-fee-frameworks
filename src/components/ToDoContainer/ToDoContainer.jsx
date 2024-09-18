@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ToDoForm from "../ToDoForm/ToDoForm"
 import ToDoList from "../ToDoList/ToDoList"
 
-const ToDoContainer = () => {
+const TodoList = () => {
     const [tasks, setTasks] = useState([])
     const [completedTasks, setCompletedTasks] = useState([])
     const [editingTask, setEditingTask] = useState(null)
@@ -52,6 +52,7 @@ const ToDoContainer = () => {
                     uncompleteTask={uncompleteTask}
                 />
                 <ToDoForm
+                    key={editingTask}
                     tasks={tasks}
                     setTasks={setTasks}
                     editingTask={editingTask}
@@ -63,11 +64,4 @@ const ToDoContainer = () => {
     )
 }
 
-export default ToDoContainer
-
-
-
-
-
-// import ToDoForm from "../ToDoForm/ToDoForm"
-// import ToDoList from "../ToDoList/ToDoList"
+export default TodoList
